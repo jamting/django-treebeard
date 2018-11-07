@@ -584,7 +584,8 @@ class MP_Node(Node):
     """Abstract model to create your own Materialized Path Trees."""
 
     steplen = 4
-    alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    # Removed troubled character W (when using sv_SE collation):
+    alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZ'
     node_order_by = []
     path = models.CharField(max_length=255, unique=True)
     depth = models.PositiveIntegerField()
